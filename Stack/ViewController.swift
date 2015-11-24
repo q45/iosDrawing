@@ -34,6 +34,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         
+        
         let tapGR = UITapGestureRecognizer(target: self, action: "didTap:")
         self.view.addGestureRecognizer(tapGR)
 
@@ -52,7 +53,12 @@ class ViewController: UIViewController {
 //        path.stroke()
         
     }
-    
+        
+    @IBAction func didTapReset(sender: UIBarButtonItem) {
+        print("Hello")
+        view.subviews.forEach({ $0.removeFromSuperview()})
+ 
+    }
     func didTap(tapGR: UITapGestureRecognizer) {
         
        let tapPoint = tapGR.locationInView(self.view)
@@ -69,6 +75,5 @@ class ViewController: UIViewController {
         
         self.view.addSubview(label)
     }
-
 }
 

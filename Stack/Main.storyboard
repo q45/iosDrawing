@@ -177,6 +177,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="RRn-wO-p2u">
+                        <barButtonItem key="leftBarButtonItem" title="reset" id="rKN-w1-8JE">
+                            <connections>
+                                <action selector="didTapReset:" destination="i1G-Pr-fZZ" id="8q9-DS-vNf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="face" id="APa-ih-rgF">
                             <connections>
                                 <segue destination="eKW-z2-N3T" kind="show" id="PrH-y4-ZbN"/>
@@ -197,12 +202,27 @@
                         <viewControllerLayoutGuide type="bottom" id="Izb-TY-Y6d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TIz-Y2-uWM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7n4-wt-XYb" customClass="FaceView" customModule="Stack" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="faceCenter">
+                                        <point key="value" x="0.0" y="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="faceRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <animations/>
@@ -236,6 +256,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="7n4-wt-XYb" id="vyS-4b-f0S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qM4-Qd-5Vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,24 +281,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whH-Br-Pbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="370"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YsC-tM-gBG">
-            <objects>
-                <viewController id="f9X-QE-jN8" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kGP-RN-9MN"/>
-                        <viewControllerLayoutGuide type="bottom" id="EsF-zX-bgu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="goZ-gE-Lyy">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bea-py-d05" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="526.5" y="370"/>
         </scene>
     </scenes>
 </document>
